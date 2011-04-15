@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^stylesheet\.css$ css.php

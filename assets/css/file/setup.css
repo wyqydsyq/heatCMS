@@ -1,0 +1,32 @@
+body { background: #333; margin:0; padding:0; font-family: Verdana, Geneva, sans-serif; font-size: 13px; color: #666; }
+* { margin:0; padding:0; }
+/** element defaults **/
+table { width: 100%; text-align: left; }
+th, td { padding: 10px 10px; }
+th { color: #fff; background: #E66000 none repeat-x scroll left top; }
+td { border-bottom: 1px solid #ccc; }
+span.required { color: #ff0000; }
+#setup_errors p {padding: 0; margin: 0; color: red;}
+li { padding-bottom: 5px; }
+li ol, li ul { font-size: 1.0em; margin-bottom: 0; padding-top: 5px; }
+#container { width: 1048px; margin: 0 auto; padding: 0; background-color: #ddd; border-right: 10px solid #555; border-left: 10px solid #555; min-height:100%; }
+#header { display:none; }
+#nav { display:none; }
+#breadcrumb { display:none; }
+#body { background: none; margin:0 auto; padding: 20px 12px 57px 12px; width: 1024px; background-color: #ddd; }
+#content { float: left; width: 100%; }
+#content h1 { color: #fff; font-family: Lucida, "Lucida Sans", Geneva, Arial, sans-serif; font-size: 13px; letter-spacing: -0.5px; border-bottom: 2px solid #D97902; margin: 0; line-height: 1.9em; padding: 5px; font-weight: bold; background: #FF9A02 url('../themes/heat_default/images/header.png') repeat-x center; }
+.box { margin: 0; padding: 10px; background-color: #fff; }
+.sidebar { display:none; }
+.clear { clear: both; }
+#footer { margin-top: -37px; position: absolute; top: 100%; width: 100%; }
+#footer p { text-align: left; color: #999; font-size: 12px; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+.footer-content { display:none; }
+#footer .footer-content p { color: #666; position: relative; top: 12px; margin-left: 185px; }
+#footer .footer-content p a { color: #fff; font-family: "Lucida Grande", "lucida sans unicode", Verdana, Arial, Helvetica, sans-serif; font-size: 16px; text-decoration: none; margin: 0 10px; padding-bottom: 2px; position: relative; top: 2px; }
+#footer .footer-content p a:hover { color: #fff; border-bottom: 2px solid #489140; }
+#footer .footer-content p a.backtotop { float: right; font-size: 13px; top: 3px; }
+#footer .footer-content span.sitename { font-family: Arial, Helvetica, sans-serif; font-size: 40px; font-weight: normal; letter-spacing: -2px; color: #CD7C02; float: left; }
+#footer .footer-bottom { padding: 7px 15px 0; height: 30px; color: #666; background: #111 url('../themes/heat_default/images/nav-bg.jpg') repeat-x scroll; }
+#footer .footer-bottom p { color: #999; }
+#footer .footer-bottom p a { color: #fff; font-weight: bold; }
