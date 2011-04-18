@@ -1,8 +1,0 @@
-heatCMS uses the follwing Open Source / Public Domain software:
-
-CodeIgniter							: by EllisLab 				@ http://codeigniter.com/
-Prototype Javascript Framework		: by Prototype Core team 	@ http://prototypejs.org/
-Scriptaculous						: by Thomas Fuchs 			@ http://script.aculo.us/
-LivePipe UI							: by Ryan Jonhson 			@ http://livepipe.net/
-LiveValidation						: by Alec Hill 				@ http://livevalidation.com/
-xml->array & array->xml				: by leoSr 					@ http://mysrc.blogspot.com/2007/02/php-xml-to-array-and-backwards.html
