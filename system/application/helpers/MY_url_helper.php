@@ -14,9 +14,4 @@ function get_base_url() {
 function get_domain() {
 	return $_SERVER['SERVER_NAME'];
 }
-function base_url_check() {
-	if (base_url() != get_base_url()){
-		redirect('error/bad_domain',302);
-	}
-}
 ?>

@@ -685,7 +685,6 @@ function _escape_identifiers($item)
      */
     function db_set_charset($charset, $collation)
     {
-        // TODO - add support if needed
         return TRUE;
     }
 

@@ -48,7 +48,7 @@ if($GLOBALS['heat_config']['status'] === false){
 $route['scaffolding_trigger'] = "";
 
 
-/*if ($handle = opendir('system/application/controllers')) {
+if ($handle = opendir('system/application/controllers')) {
 	$controllers = '';
     while (false !== ($file = readdir($handle))) {
         if (
@@ -63,9 +63,10 @@ $route['scaffolding_trigger'] = "";
     closedir($handle);
 }
 $controllers = str_replace('.php', '', substr($controllers, 0, -1));
-$controllers = "^(?!".$controllers."|error).*";
+$controllers = "^(?!$controllers|error).*$";
 //die($controllers);
-$route[$controllers] = "base/$0";*/
+$route[$controllers] = "base/index/$0";
+//$route['(.*)'] = "base/index/$1";
 
 
 /* End of file routes.php */

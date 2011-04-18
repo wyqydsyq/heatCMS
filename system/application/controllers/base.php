@@ -7,14 +7,20 @@
 			parent::Controller();
 			
 		}
-		function __construct()
-		{
-			parent::Controller();
+		
+		function index($page='home'){
+			$query = $this->db->query("SELECT * FROM `heat_content` WHERE `id`='$page'");
+			$result = $query->result_array();
 			
-			base_url_check();
-		}
-		function index(){
-			echo $this->config->item('base_url');
+			if(empty($result)){
+				$data['title'] = lang('error_404');
+				$data['content'] = lang('error_404_msg', current_url());
+				$this->output->set_status_header('404');
+				$this->Page->build($data);
+			}else{
+				$this->output->set_status_header('200');
+				$this->Page->build($result[0], $page);
+			}
 		}
 	}
 

@@ -72,7 +72,9 @@
 			$data['content'] = 'CONGRATS! YOU\'RE A HOMO!';
 			$this->Page->build($data);
 		}
+		// TODO: Create basic page creation/modification
+
 	}
 
-/* End of file welcome.php */
-/* Location: ./system/application/controllers/examples.php */
+/* End of file control_panel.php */
+/* Location: ./system/application/controllers/control_panel.php */

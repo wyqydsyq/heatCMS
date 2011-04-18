@@ -51,7 +51,7 @@ $autoload['libraries'] = array('database');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'lang', 'cookie', 'xml', 'heat');
+$autoload['helper'] = array('url', 'language', 'cookie', 'xml', 'heat');
 
 
 /*

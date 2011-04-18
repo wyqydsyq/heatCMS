@@ -14,4 +14,6 @@ $lang['setup_dialogue_username'] 		= 'Username';
 $lang['setup_dialogue_password']		= 'Password';
 $lang['setup_dialogue_email']			= 'Email';
 $lang['setup_button_next']				= 'Next &raquo;';
+$lang['setup_complete_title']			= 'Setup Successful';
+$lang['setup_complete_message']			= '<p>Setup completed successfully, '.anchor('control_panel','click here').' to log in to the control panel, or '.anchor('','click here').' to go to the homepage</p>';
 ?>

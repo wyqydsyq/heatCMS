@@ -144,7 +144,6 @@ class CI_DB_postgre_driver extends CI_DB {
 	 */
 	function db_set_charset($charset, $collation)
 	{
-		// @todo - add support if needed
 		return TRUE;
 	}
 

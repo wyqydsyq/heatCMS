@@ -7,12 +7,12 @@ class Page extends Model {
     }
 	// page building function
 	/*
-			$page		: The page to look for
-			$vars		: Variables to send to that page, or to the template
+			$data		: Variables to send to that page, or to the template
+			$page		: View to load
 			$type		: Is this a different type of page from the default?
 			$assets		: Are there any special assets (css/js) we need to load for this page?
 	*/
-	function build($vars, $page=NULL, $type=false, $assets=array()){
+	function build($data, $page=false, $type=false, $assets=array()){
 		
 		$this->load->model('database');
 		
@@ -20,13 +20,10 @@ class Page extends Model {
 		switch($type){
 			// system pages. Control panel .etc
 			case 'system':
-				$assets['css']['']='file/system.css';
 				if(Database::get_config('theme') != 'heat_default'){$assets['css']['']='../themes/heat_default/css/stylesheet.css';}
 			break;
 		}
 		
-		// find the page
-		$query = $this->db->query("SELECT * FROM `heat_content` WHERE `name`='$page'");
 			
 		// get theme from db
 		$get_theme = Database::get_config('theme');
@@ -52,13 +49,17 @@ class Page extends Model {
 		$data['theme_css'] = '<link type="text/css" rel="stylesheet" href="'.$this->heat_conf('site_url').'assets/css/stylesheet.css?stylesheets='.$css.'&amp;theme='.$theme.'" />';
 		$data['theme_js'] = '<script type="text/javascript" src="'.$this->heat_conf('site_url').'assets/js/javascript.js?scripts='.$js.'&amp;theme='.$theme.'"></script>';
 		
-		// away we go!
+		
+		// check to see if the page exists in the database, if so, turn it into a page
+		$query = $this->db->query("SELECT `id` FROM `heat_content` WHERE '".@$data['id']."'=`id`");
 		if($query->num_rows() != 0){
-			$this->load->view('template', $data, true);
+			
+			$output = $this->load->view('template', $data, true);
 			$this->output->set_output($output);
-		}else{
-			$data = array_merge($data, $vars);
-			if($page !== NULL){
+		}
+		// otherwise load the template page with the $data provided, which will be a 404 error message if no $data was provided at the start of this script.
+		else{
+			if(!empty($page)){
 				$data['content'] = $this->load->view($page, $data, true);	
 			}
 			$output = $this->load->view('template', $data, true);
@@ -78,16 +79,12 @@ function generate_nav($zone='',$list=true){
 				$return .= @$li_o.anchor('','Live Site').@$li_c;
 				$return .= @$li_o.anchor('control_panel/dashboard','Dashboard').@$li_c;
 			break;
-			case 'footer':
-				$return .= @$li_o.anchor('','Home').@$li_c;
-			break;
 			default:
-				$query = $this->db->query("SELECT `id`,`name` FROM `heat_content`");
+				$query = $this->db->query("SELECT `id`,`title` FROM `heat_content`");
 				
 				if ($query->num_rows() > 0){
 					foreach ($query->result() as $row){
-						$return .= @$li_o.anchor($row->id, $row->name).@$li_c;
-						echo $row->name;
+						$return .= @$li_o.anchor($row->id, $row->title).@$li_c;
 					}
 				}
 			break;

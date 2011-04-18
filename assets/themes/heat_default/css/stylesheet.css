@@ -3,8 +3,8 @@ body { background: #999; margin:0; padding:0; font-family: Verdana, Geneva, sans
 .clear { clear: both; }
 .hidden { display: none; }
 
-#container { background: #FFF; width: 1000px; margin: 0 auto; }
-#header { padding: 20px; background: ~colour2; color: #FFF; }
+#container { background: #FFF; width: 1000px; margin: 0 auto; height: 100%; }
+#header { padding: 20px; background: ~colour2; color: #FFF; border-bottom: solid 2px #BD3102; }
 #body { padding: 20px; }
 #footer { padding: 20px; }
 
@@ -12,7 +12,14 @@ a:link { color: ~colour2; text-decoration: none; }
 a:visited { color: ~colour2; }
 a:hover { text-decoration: underline; }
 
-#nav ul { padding: 0; margin: 0 20px; list-style-type: none; height: 35px; }
+#nav ul { padding: 0; margin: -2px 20px 0 20px; list-style-type: none; height: 35px; }
 #nav ul li { display: inline; }
 #nav ul li a { float: left; padding: 10px; height: 15px; }
-#nav ul li a:hover { color: #FFF; background: ~colour2; }
+#nav ul li a:hover { color: #FFF; background: ~colour2; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BD3102; }
+#nav ul li a:active { border-bottom-color: #FECAB8; }
+
+#footer { position: fixed; bottom: 0px; width: 960px; }
+#footer .footer-content { padding: 10px 0; }
+#footer ul { padding: 0; list-style: none; display: inline; }
+#footer ul li { display: inline; padding: 0 10px; }
+#footer .backtotop { float: right; }
