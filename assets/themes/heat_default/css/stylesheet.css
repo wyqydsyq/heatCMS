@@ -4,18 +4,18 @@ body { background: #999; margin:0; padding:0; font-family: Verdana, Geneva, sans
 .hidden { display: none; }
 
 #container { background: #FFF; width: 1000px; margin: 0 auto; height: 100%; }
-#header { padding: 20px; background: ~colour2; color: #FFF; border-bottom: solid 2px #BD3102; }
+#header { padding: 20px; background: #colour2; color: #FFF; border-bottom: solid 2px #BD3102; }
 #body { padding: 20px; }
 #footer { padding: 20px; }
 
-a:link { color: ~colour2; text-decoration: none; }
-a:visited { color: ~colour2; }
+a:link { color: #colour2; text-decoration: none; }
+a:visited { color: #colour2; }
 a:hover { text-decoration: underline; }
 
 #nav ul { padding: 0; margin: -2px 20px 0 20px; list-style-type: none; height: 35px; }
 #nav ul li { display: inline; }
 #nav ul li a { float: left; padding: 10px; height: 15px; }
-#nav ul li a:hover { color: #FFF; background: ~colour2; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BD3102; }
+#nav ul li a:hover { color: #FFF; background: #colour2; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BD3102; }
 #nav ul li a:active { border-bottom-color: #FECAB8; }
 
 #footer { position: fixed; bottom: 0px; width: 960px; }
@@ -23,3 +23,17 @@ a:hover { text-decoration: underline; }
 #footer ul { padding: 0; list-style: none; display: inline; }
 #footer ul li { display: inline; padding: 0 10px; }
 #footer .backtotop { float: right; }
+
+table { width: 100%; }
+table th { padding: 10px; text-align: left; border: none; background: #colour3; color: #colour1; }
+table tr { background: #fff; }
+table tr:hover { background: #eee; }
+table td { padding: 10px; border-bottom-style: dashed; border-bottom-width: 1px; border-bottom-color: #757575; }
+table.add_context_menu td a { width: 100%; height: 100%; padding: 0; margin: 0; }
+
+div.context_menu { position: absolute; top: 0; left: 0; width: 12em; background: #colour1; border: 1px solid #eee; padding: 2px 0; }
+div.context_menu a { display: block; text-decoration: none; cursor: default; outline: none; font-size: 11px; color: #555; padding: 4px 15px; margin: 0 2px; }
+div.context_menu a:hover { background: #006; color: #fff; }
+.context_menu .separator { height: 1px; padding: 0; overflow: hidden; display: block; font-size: 1px; }
+.context_menu ul, .context_menu li { margin: 0; padding: 0; list-style: none; }
+.context_menu li { list-style-position: outside; }

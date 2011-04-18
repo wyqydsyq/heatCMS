@@ -5,7 +5,7 @@
 	<title><?php echo @$title; ?></title>
 	<?php echo $theme_css; ?>
 </head>
-	<body>
+	<body<?php echo ' class="'.@$path.'"'; ?>>
 		<div id="container">
 			<div id="header">
 				<h1><a href="<?php echo base_url(); ?>"><?php echo $this->Page->heat_conf('site_name'); ?></a></h1>
@@ -17,7 +17,7 @@
 				</ul>
 			</div>
 			<div id="body">
-				<div id="content">
+			    <div id="content">
 					<h1><?php echo @$title; ?></h1>
 					<?php echo @$content; ?>
 				</div>

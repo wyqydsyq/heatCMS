@@ -21,11 +21,12 @@ if(!empty($theme['js'])){
 }
 
 // add files to the array with your if/else clauses and what not
+$include[] = 'file/prototype.js';
+//$include[] = 'file/scriptaculous/scriptacoulous.js';
+//$include[] = 'file/livepipe/livepipe.js';
+//$include[] = 'file/livevalidation_prototype.compressed.js';
+$include[] = 'file/hotkeys-min.js';
 
-$include[] = 'prototype.js';
-$include[] = 'scriptaculous/scriptacoulous.js';
-$include[] = 'livepipe/livepipe.js';
-$include[] = 'livevalidation_prototype.compressed.js';
 
 // loop over and add in all theme files
 if(!empty($theme['js'])){
@@ -37,17 +38,25 @@ if(!empty($theme['js'])){
 // add files included from $_GET
 $include = array_merge($include, (array)$g_include);
 
+// set variables (key will = value)
+$vars = array(
+	'~base_url/' => $_GET['base_url'],
+);
 // set header type to javascript just so browsers don't spew
 header('Content-type: text/javascript');
 
 // include js files
 foreach($include as $key => $file){
-	$the_file = "file/".$file;
+	$the_file = $file;
 	if(file_exists($the_file) && filesize($the_file) > 0){
 		$fh = fopen($the_file, 'r');
 		$data = fread($fh, filesize($the_file));
 		fclose($fh);
 			
+		foreach($vars as $key=>$val){
+			$data = str_replace($key, $val, $data);
+		}	
+					
 		echo $data;
 	}
 }

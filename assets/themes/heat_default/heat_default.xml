@@ -25,40 +25,52 @@ e.g. for <css><file><src>stylesheet.css</src></file></css>, the system will look
 <src>			: Filename (with extension) of a file. e.g. the jquery library would be something like <src>jquery-1.4.4.min.js</src>
 -->
 <theme>
-	<title>heatCMS Default</title>
-	<version>1.0</version>
-	<released></released>
-	<updated></updated>
-	<description>Default theme for heatCMS</description>
-	<author>Damon Poole</author>
-	<url>http://powerindesign.com/</url>
-	<image_url></image_url>
-	<thumb_url></thumb_url>
+    <title>heatCMS Default</title>
+    <version>1.0</version>
+    <released></released>
+    <updated></updated>
+    <description>Default theme for heatCMS</description>
+    <author>Damon Poole</author>
+    <url>http://powerindesign.com/</url>
+    <image_url></image_url>
+    <thumb_url></thumb_url>
 	
-	<resources>
-		<css>
-			<file>
-				<title>stylesheet</title>
-				<src>stylesheet.css</src>
-			</file>
-			<file>
-				<title>forms</title>
-				<src>forms.css</src>
-			</file>
-			<file>
-				<title>type</title>
-				<src>type.css</src>
-			</file>
-		</css>
+    <resources>
+	<css>
+	    <file>
+		<title>stylesheet</title>
+		<src>stylesheet.css</src>
+	    </file>
+	    <file>
+		<title>forms</title>
+		<src>forms.css</src>
+	    </file>
+	    <file>
+		<title>type</title>
+		<src>type.css</src>
+	    </file>
+	</css>
 		
-		<js>
-		</js>
+	<js>
+            <file>
+                <title>proto.menu</title>
+                <src>proto.menu.js</src>
+            </file>
+	    <file>
+		<title>functions</title>
+		<src>functions.js</src>
+	    </file>
+	    <file>
+		<title>run</title>
+		<src>run.js</src>
+	    </file>
+	</js>
 		
-		<php>
-			<file>
-				<title>template</title>
-				<src>template.php</src>
-			</file>
-		</php>
-	</resources>
+	<php>
+	    <file>
+		<title>template</title>
+		<src>template.php</src>
+	    </file>
+	</php>
+    </resources>
 </theme>

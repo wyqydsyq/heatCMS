@@ -11,7 +11,7 @@
 		function index(){
 			redirect('control_panel/dashboard');
 		}
-		function check_credidentials($username, $password){
+		function check_credentials($username, $password){
 				$password = hash('sha256', $password);
 				$check = $this->db->query("SELECT `username` FROM `heat_users` WHERE `username`='$username' AND `password`='$password'");
 				if($check->num_rows() > 0){}else{
@@ -19,6 +19,7 @@
 					return false;
 				}
 		}
+		// TODO: login() should really be it's own controller and it should get the form via a view
 		function login(){
 			$this->load->library('form_validation');
 			
@@ -66,13 +67,45 @@
 				redirect('control_panel');
 			}
 		}
+                /*
+                 * Control panel pages from here
+                 */
+                // Dashboard
 		function dashboard(){
 			$data['title'] = lang('heat_control_panel_title', array(lang('page_dashboard')));
 			$data['zone'] = 'control_panel';
-			$data['content'] = 'CONGRATS! YOU\'RE A HOMO!';
-			$this->Page->build($data);
+			$data['content'] = '"dashboard" content here';
+			$this->Page->build($data, false, 'system');
 		}
-		// TODO: Create basic page creation/modification
+                // Pages and page manipulation (add/edit/delete etc.)
+		function pages($action='list',$page=NULL){
+		    switch($action){
+			// List pages
+			case 'list':
+			    $data['title'] = lang('heat_control_panel_title', array(lang('page_pages_list')));
+			    $data['zone'] = 'control_panel';
+			    
+			    // loop through all pages and collect them
+			    $query = $this->db->query("SELECT * FROM `heat_content`");
+			    if ($query->num_rows() > 0) {
+				$i = 0;
+				foreach ($query->result() as $page) {
+				    $data['pages'][$i]['title'] = $page->title;
+				    $data['pages'][$i]['path'] = $page->path;
+				    $data['pages'][$i]['timestamp'] = $page->timestamp;
+				    $i++;
+				}
+			    }
+			    
+			    // send collected pages to this view
+			    $this->Page->build($data, 'control_panel/list', 'system');
+			break;
+                        
+                        default:
+                            redirect('/error/404');
+                        break;
+		    }
+		}
 
 	}
 

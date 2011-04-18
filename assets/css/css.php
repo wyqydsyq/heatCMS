@@ -38,8 +38,9 @@ $include = array_merge($include, (array)$g_include);
 
 // set variables (key will = value)
 $vars = array(
-	'~colour1' => '#ffffff',
-	'~colour2' => '#F60'
+	'#colour1' => '#ffffff',
+	'#colour2' => '#F60',
+	'#colour3' => '#333'
 );
 
 // set header type to css just so browsers don't spew
@@ -53,9 +54,9 @@ foreach($include as $key => $file){
 		$data = fread($fh, filesize($the_file));
 		fclose($fh);
 			
-			foreach($vars as $key=>$val){
-				$data = str_replace($key, $val, $data);
-			}	
+		foreach($vars as $key=>$val){
+			$data = str_replace($key, $val, $data);
+		}	
 					
 		echo $data;
 	}

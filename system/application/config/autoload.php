@@ -95,7 +95,7 @@ $autoload['config'] = array();
 |
 */
 
-$autoload['language'] = array('setup', 'validation', 'heat');
+$autoload['language'] = array('validation', 'heat');
 
 
 /*

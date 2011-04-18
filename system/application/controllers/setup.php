@@ -53,13 +53,14 @@
 				
 				// create default home page
 				$this->db->query("REPLACE INTO `heat_content`
-					(id, path, title, content, meta)
+					(id, path, title, content, meta, timestamp)
 					VALUES(
 						'home',
 						'home',
 						'Home',
 						'Welcome to your new heatCMS installation!',
-						''
+						'',
+						'".time()."'
 					)
 				");
 				

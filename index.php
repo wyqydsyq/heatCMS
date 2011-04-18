@@ -2,11 +2,6 @@
 // setup language
 $GLOBALS['setup_language'] = 'english';
 
-
-
-// start page loading timer
-$GLOBALS['request_time'] = microtime(true);
-
 // load heat.conf
 $filename = "assets/heat.conf";
 $handle = fopen($filename, "r");

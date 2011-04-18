@@ -13,10 +13,7 @@
 			$result = $query->result_array();
 			
 			if(empty($result)){
-				$data['title'] = lang('error_404');
-				$data['content'] = lang('error_404_msg', current_url());
-				$this->output->set_status_header('404');
-				$this->Page->build($data);
+				$this->Heat->error(404, uri_string());
 			}else{
 				$this->output->set_status_header('200');
 				$this->Page->build($result[0], $page);
