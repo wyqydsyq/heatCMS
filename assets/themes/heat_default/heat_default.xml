@@ -25,6 +25,44 @@ e.g. for <css><file><src>stylesheet.css</src></file></css>, the system will look
 <src>			: Filename (with extension) of a file. e.g. the jquery library would be something like <src>jquery-1.4.4.min.js</src>
 -->
 <theme>
+<<<<<<< HEAD
+	<title>heatCMS Default</title>
+	<version>1.0</version>
+	<released></released>
+	<updated></updated>
+	<description>Default theme for heatCMS</description>
+	<author>Damon Poole</author>
+	<url>http://powerindesign.com/</url>
+	<image_url></image_url>
+	<thumb_url></thumb_url>
+	
+	<resources>
+		<css>
+			<file>
+				<title>stylesheet</title>
+				<src>stylesheet.css</src>
+			</file>
+			<file>
+				<title>forms</title>
+				<src>forms.css</src>
+			</file>
+			<file>
+				<title>type</title>
+				<src>type.css</src>
+			</file>
+		</css>
+		
+		<js>
+		</js>
+		
+		<php>
+			<file>
+				<title>template</title>
+				<src>template.php</src>
+			</file>
+		</php>
+	</resources>
+=======
     <title>heatCMS Default</title>
     <version>1.0</version>
     <released></released>
@@ -73,4 +111,5 @@ e.g. for <css><file><src>stylesheet.css</src></file></css>, the system will look
 	    </file>
 	</php>
     </resources>
+>>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 </theme>

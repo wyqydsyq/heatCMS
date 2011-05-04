@@ -8,7 +8,11 @@ class Page extends Model {
 	// page building function
 	/*
 			$data		: Variables to send to that page, or to the template
+<<<<<<< HEAD
+			$page		: View to load
+=======
 			$page		: View to load if a page matching $data['id'] could not be found in DB. If neither are supplied then the user will get a 404
+>>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 			$type		: Is this a different type of page from the default?
 			$assets		: Are there any special assets (css/js) we need to load for this page?
 	*/
@@ -46,8 +50,13 @@ class Page extends Model {
 		}
 		
 		// set theme strings
+<<<<<<< HEAD
+		$data['theme_css'] = '<link type="text/css" rel="stylesheet" href="'.$this->heat_conf('site_url').'assets/css/stylesheet.css?stylesheets='.$css.'&amp;theme='.$theme.'" />';
+		$data['theme_js'] = '<script type="text/javascript" src="'.$this->heat_conf('site_url').'assets/js/javascript.js?scripts='.$js.'&amp;theme='.$theme.'"></script>';
+=======
 		$data['theme_css'] = '<link type="text/css" rel="stylesheet" href="'.$this->heat_conf('site_url').'assets/css/stylesheet.css?stylesheets='.$css.'&amp;theme='.$theme.'&amp;base_url='.urlencode(base_url()).'" />';
 		$data['theme_js'] = '<script type="text/javascript" src="'.$this->heat_conf('site_url').'assets/js/javascript.js?scripts='.$js.'&amp;theme='.$theme.'&amp;base_url='.urlencode(base_url()).'"></script>';
+>>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 		
 		
 		// check to see if the page exists in the database, if so, turn it into a page
@@ -62,7 +71,10 @@ class Page extends Model {
 			if(!empty($page)){
 				$data['content'] = $this->load->view($page, $data, true);	
 			}
+<<<<<<< HEAD
+=======
 			$data['path'] = str_replace('/', '-', substr(uri_string(), 1));
+>>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 			$output = $this->load->view('template', $data, true);
 			$this->output->set_output($output);
 		}
@@ -79,7 +91,10 @@ function generate_nav($zone='',$list=true){
 			case 'control_panel':
 				$return .= @$li_o.anchor('','Live Site').@$li_c;
 				$return .= @$li_o.anchor('control_panel/dashboard','Dashboard').@$li_c;
+<<<<<<< HEAD
+=======
 				$return .= @$li_o.anchor('control_panel/pages','Pages').@$li_c;
+>>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 			break;
 			default:
 				$query = $this->db->query("SELECT `id`,`title` FROM `heat_content`");

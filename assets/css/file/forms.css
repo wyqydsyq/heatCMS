@@ -1,0 +1,23 @@
+/* position forms */
+* html fieldset { position: relative; }
+* html legend { position: relative; left: -7px; top: -0.75em; }
+* html fieldset ol { padding-top: 0.25em; }
+
+fieldset { margin: 15px 0 0 0; padding: 5px; border: solid 1px #efefef; }  
+legend { margin-left: 10px; color: #000; font-weight: bold; border: solid 1px #efefef; background: #fff; padding: 5px; }  
+fieldset ol { padding: 10px 10px 0 10px; list-style: none; }  
+fieldset li { padding-bottom: 10px; }  
+fieldset.submit { border-style: none; }
+label { float: left; width: 20%; margin-right: 1em; text-align: right; }
+.no_label_styles label { width: 20%px; float: none; }
+.right input { margin-right: 10px; }
+
+/* style forms */
+fieldset { display: block; border: none; border-top: 1px solid #ccc; }
+fieldset legend { font-weight: bold; font-size: 13px; padding-right: 10px; color: #333; }
+fieldset form { padding-top: 15px; }
+fieldset p label { float: left; width: 150px; }
+form input, form select, form textarea { padding: 5px; color: #333333; border: 1px solid #ddd; border-right:1px solid #ccc; border-bottom:1px solid #ccc; background-color:#fff; font-family: Arial, Helvetica, sans-serif; font-size: 13px; }
+form input.form_button:hover, form input.form_submit:hover {  background: #DF7C02 url('../themes/heat_default/images/header.png') repeat-x center; color: #FFF; }
+form input.form_button:hover, form input.form_submit:active {  background: #333 url('../themes/heat_default/images/header.png') repeat-x center; color: #FFF; }
+form.searchform p { margin: 5px 0; }
