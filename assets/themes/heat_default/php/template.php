@@ -5,11 +5,7 @@
 	<title><?php echo @$title; ?></title>
 	<?php echo $theme_css; ?>
 </head>
-<<<<<<< HEAD
-	<body>
-=======
 	<body<?php echo ' class="'.@$path.'"'; ?>>
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 		<div id="container">
 			<div id="header">
 				<h1><a href="<?php echo base_url(); ?>"><?php echo $this->Page->heat_conf('site_name'); ?></a></h1>
@@ -21,11 +17,7 @@
 				</ul>
 			</div>
 			<div id="body">
-<<<<<<< HEAD
-				<div id="content">
-=======
 			    <div id="content">
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 					<h1><?php echo @$title; ?></h1>
 					<?php echo @$content; ?>
 				</div>

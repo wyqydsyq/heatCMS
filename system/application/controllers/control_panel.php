@@ -11,11 +11,7 @@
 		function index(){
 			redirect('control_panel/dashboard');
 		}
-<<<<<<< HEAD
-		function check_credidentials($username, $password){
-=======
 		function check_credentials($username, $password){
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 				$password = hash('sha256', $password);
 				$check = $this->db->query("SELECT `username` FROM `heat_users` WHERE `username`='$username' AND `password`='$password'");
 				if($check->num_rows() > 0){}else{
@@ -23,10 +19,7 @@
 					return false;
 				}
 		}
-<<<<<<< HEAD
-=======
 		// TODO: login() should really be it's own controller and it should get the form via a view
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 		function login(){
 			$this->load->library('form_validation');
 			
@@ -74,22 +67,14 @@
 				redirect('control_panel');
 			}
 		}
-<<<<<<< HEAD
-=======
                 /*
                  * Control panel pages from here
                  */
                 // Dashboard
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 		function dashboard(){
 			$data['title'] = lang('heat_control_panel_title', array(lang('page_dashboard')));
 			$data['zone'] = 'control_panel';
 			$data['content'] = '"dashboard" content here';
-<<<<<<< HEAD
-			$this->Page->build($data);
-		}
-		// TODO: Create basic page create/edit/delete functions
-=======
 			$this->Page->build($data, false, 'system');
 		}
                 // Pages and page manipulation (add/edit/delete etc.)
@@ -121,8 +106,6 @@
                         break;
 		    }
 		}
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
-
 	}
 
 /* End of file control_panel.php */

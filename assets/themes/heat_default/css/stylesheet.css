@@ -4,40 +4,24 @@ body { background: #999; margin:0; padding:0; font-family: Verdana, Geneva, sans
 .hidden { display: none; }
 
 #container { background: #FFF; width: 1000px; margin: 0 auto; height: 100%; }
-<<<<<<< HEAD
-#header { padding: 20px; background: ~colour2; color: #FFF; border-bottom: solid 2px #BD3102; }
-#body { padding: 20px; }
-#footer { padding: 20px; }
-
-a:link { color: ~colour2; text-decoration: none; }
-a:visited { color: ~colour2; }
-=======
 #header { padding: 20px; background: #colour2; color: #FFF; border-bottom: solid 2px #BD3102; }
 #body { padding: 20px; }
 #footer { padding: 20px; }
 
 a:link { color: #colour2; text-decoration: none; }
 a:visited { color: #colour2; }
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 a:hover { text-decoration: underline; }
 
 #nav ul { padding: 0; margin: -2px 20px 0 20px; list-style-type: none; height: 35px; }
 #nav ul li { display: inline; }
 #nav ul li a { float: left; padding: 10px; height: 15px; }
-<<<<<<< HEAD
-#nav ul li a:hover { color: #FFF; background: ~colour2; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BD3102; }
-=======
 #nav ul li a:hover { color: #FFF; background: #colour2; border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #BD3102; }
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
 #nav ul li a:active { border-bottom-color: #FECAB8; }
 
 #footer { position: fixed; bottom: 0px; width: 960px; }
 #footer .footer-content { padding: 10px 0; }
 #footer ul { padding: 0; list-style: none; display: inline; }
 #footer ul li { display: inline; padding: 0 10px; }
-<<<<<<< HEAD
-#footer .backtotop { float: right; }
-=======
 #footer .backtotop { float: right; }
 
 table { width: 100%; }
@@ -53,4 +37,3 @@ div.context_menu a:hover { background: #006; color: #fff; }
 .context_menu .separator { height: 1px; padding: 0; overflow: hidden; display: block; font-size: 1px; }
 .context_menu ul, .context_menu li { margin: 0; padding: 0; list-style: none; }
 .context_menu li { list-style-position: outside; }
->>>>>>> 8e57b208f208e8e7f024426d95f2e8d074a76770
