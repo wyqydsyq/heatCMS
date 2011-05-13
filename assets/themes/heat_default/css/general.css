@@ -1,0 +1,41 @@
+body { color: #colour3; }
+
+#header { background: #colour2; height: auto; }
+#header h1 { padding: 10px; }
+#header h1 a { color: #colour1; }
+
+a, a:link, a:visited { color: #colour2; }
+a:link, a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; color: #colour2 }
+
+#nav { margin: 0 0 7px 0; height: auto; }
+#nav ul { padding: 0; margin: 0; }
+#nav ul li { list-style: none; padding: 0; margin: 0; display: inline; }
+#nav ul li a { padding: 10px; font-size: 1.5em; }
+#nav ul li a:hover { color: #colour1; background: #colour2; }
+
+#body { float: left; }
+
+#content { float: left; border-top: solid 2px #colour5; padding: 5px 0 0 0; }
+
+#sidebar { float: right; border-top: dashed 2px #colour5; padding: 5px 0 0 0; }
+#sidebar li { list-style: none; }
+#sidebar li:before { content: "» "; }
+
+#footer { margin: 25px 0 0 0; padding: 5px 0 0 0; border-top-style: dotted; border-top-width: 1px; border-top-color: #colour3; }
+#footer ul { padding: 0 0 5px 0; margin: 0 0 5px 0; border-bottom-style: dotted; border-bottom-width: 1px; border-bottom-color: #colour4; }
+#footer ul li { list-style: none; display: inline; padding: 0 20px 0 0; }
+
+form li, form ul { list-style: none; display: block; }
+
+tbody tr:nth-child(2n) td, tbody tr.even td { background: #colour5; }
+
+.backtotop { float: right; }
+
+.control_panel-login #container { width: 475px; }
+.control_panel-login #body, .control_panel-login #content, .control_panel-login #header { border: none; }
+.control_panel-login #nav, .control_panel-login #sidebar, .control_panel-login #footer, .control_panel-login legend, .control_panel-login #header { display: none; }
+
+label { float: left; width: 10em; margin-right: 1em; }  
+fieldset li { float: left; clear: left; width: 100%; padding-bottom: 1em; } 
+fieldset { float: left; clear: left; width: 100%; margin: 0 0 1.5em 0; padding: 0; }  
