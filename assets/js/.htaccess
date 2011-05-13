@@ -1,2 +1,0 @@
-RewriteEngine on
-RewriteRule ^javascript\.js$ javascript.php
