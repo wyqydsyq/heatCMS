@@ -6,6 +6,7 @@
 * CSS and JavaScript theme assets are now automatically compressed to decrease load times! (note: if you have colossal css/js files, page generation might take longer as the server may take a while to compress the assets, even then it should be balanced out by the client loading the page faster once generated)
 * Updated to CodeIgniter 2.0.2
 * Implemented basic page creation
+
 ## TODO for release
 * Implement a WYSIWYG editor, either TinyMCE (looks good but is pretty bloated) or jwysiwyg (simple, fast and clean but possibly buggy due to being less used)
 * Finish page manipulation (add/edit/delete) with chosen WYSIWYG editor
