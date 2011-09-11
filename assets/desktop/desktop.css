@@ -1,0 +1,67 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body { font-family: Arial,Helvetica,sans-serif; }
+body#canvas { background-image: url('heatCMS_background.png'); background-position: 50% 25%; }
+
+button#do_button { width: 60px; height: 60px; position: fixed; top: 0px; left: 0px; z-index: 9999; cursor: pointer; float: left; color: #fff; border: none; padding: 15px; background: url('do_menu.png') #111111 no-repeat top left; }
+div#do_menu { min-width: 100px; padding: 16px 15px 17px 45px; min-height: 60px; position: fixed; top: 0px; left: 0px; z-index: 9998; background-color: #F2F2F2; display: none; float: left; background: url('do_menu.png') #111111 no-repeat top left; }
+div#do_menu ul { list-style: none; border-left: 2px solid #666666; margin: 0 0 0 20px; padding: 0 0 0 10px; }
+div#do_menu.show { display: block; }
+div#do_menu a:link, div#do_menu a:visited { color: #eee; text-decoration: none; border: none; }
+div#do_menu a:hover { color: #f60; text-decoration: underline; }
+div#do_menu a:focus { outline: 0; }
+div#do_menu img { padding: 10px; }
+div#do_menu img:hover { border-radius: 15px; background-color: #F2F2F2; }
+div#do_menu img:active { border-radius: 15px; background-color: #999; }
+#do_button, #do_menu { -moz-box-shadow: 0 0 5px #000; -webkit-box-shadow: 0 0 5px #000; box-shadow: 0 0 5px #000;}
+#do_button:hover { color: #f60; }
+#do_button:active { background: url('do_menu_i.png') #EEEEEE no-repeat top left; color: #333; outline: 0; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; }
+#do_button:focus { outline: 0; }
+#do_button.clicked { -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+#do_button::-moz-focus-inner, #do_menu::-moz-focus-inner { border: 0; }
+
+.ui-dialog.ui-widget-content { -moz-box-shadow: 0 0 5px #000; -webkit-box-shadow: 0 0 5px #000; box-shadow: 0 0 5px #000; background: transparent; }
+.ui-dialog-content.ui-widget-content.desklet-window { background: #ffffff; -moz-box-shadow: 0 0 5px 4px #FFFFFF; -webkit-box-shadow: 0 0 5px 4px #FFFFFF; box-shadow: 0 0 5px 4px #FFFFFF; }
+.ui-widget-header.ui-corner-all { border-radius: 5px 5px 0 0; -moz-box-shadow: 0 0 5px 4px #FFFFFF; -webkit-box-shadow: 0 0 5px 4px #FFFFFF; box-shadow: 0 0 5px 4px #FFFFFF; }

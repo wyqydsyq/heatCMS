@@ -13,6 +13,10 @@
                 <?php echo form_label(lang('setup_dialogue_name')); ?>
                 <?php echo form_input('site_name', set_value('site_name')); ?>
             </li>
+            <li>
+                <?php echo form_label(lang('setup_dialogue_language')); ?>
+                <?php echo form_dropdown('language', $languages); ?>
+            </li>
         </ol>
     </fieldset>
     <fieldset>

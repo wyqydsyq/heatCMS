@@ -16,12 +16,11 @@ class Login extends CI_Controller {
         $key = $username.'heat'.hash('sha256', $this->input->post('password'));
         $key = hash('sha256', $key);
         $check = $this->db->query("SELECT * FROM `heat_users` WHERE `key`='".$key."'");
-        $result = $check->result_array();
-        die(var_dump($result));
-        $meta = unserialize($result['meta']);
-        $meta['last_ip'] = $this->input->ip_address();
-        $meta = serialize($meta);
         if ($check->num_rows() > 0) {
+            $result = $check->result_array();
+            $meta = unserialize($result['meta']);
+            $meta['last_ip'] = $this->input->ip_address();
+            $meta = serialize($meta);
             $this->db->query("UPDATE `heat_users` SET `meta`='".$meta."' WHERE `key`='".$key."'");
             return true;
         } else {
@@ -38,7 +37,7 @@ class Login extends CI_Controller {
         $this->form_validation->set_message('check_credidentials', lang('login_incorrect'));
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = lang('heat_control_panel_login_title', array(lang('page_control_panel')));
+            $data['title'] = lang('login');
             $this->Page->build($data, 'login');
         } else {
             $username = $this->input->post('username');
@@ -47,7 +46,7 @@ class Login extends CI_Controller {
             $cookie = array(
                 'name' => 'login_key',
                 'value' => $key,
-                'expire' => time() + (60 * 60),
+                'expire' => 60 * 60,
                 'domain' => '.' . get_domain(),
                 'path' => '/',
                 'prefix' => '',

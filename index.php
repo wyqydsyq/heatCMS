@@ -47,6 +47,7 @@ if(file_exists($heat_conf)){
 
     $conf = unserialize($conf);
     $GLOBALS['heat_config'] = $conf;
+    $GLOBALS['default_language'] = $conf['language'];
 
 }else{
     // if we're here, heat.conf couldn't be found... revert to setup mode

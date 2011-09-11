@@ -1,6 +1,6 @@
-body { color: #colour3; }
+body { color: #colour3; background: url($SITEURLassets/themes/$THEME/images/header_shadow.png) center 67px repeat-x;  }
 
-#header { background: #colour2; height: auto; }
+#header { background: #colour2 url($SITEURLassets/themes/$THEME/images/header_shadow.png) center bottom repeat-x; height: auto; }
 #header h1 { padding: 10px; }
 #header h1 a { color: #colour1; }
 
@@ -12,7 +12,7 @@ a:hover { text-decoration: underline; color: #colour2 }
 #nav ul { padding: 0; margin: 0; }
 #nav ul li { list-style: none; padding: 0; margin: 0; display: inline; }
 #nav ul li a { padding: 10px; font-size: 1.5em; }
-#nav ul li a:hover { color: #colour1; background: #colour2; }
+#nav ul li a:hover { color: #colour1; background: #colour2 url($SITEURLassets/themes/$THEME/images/header_shadow.png) center bottom repeat-x; }
 
 #body { float: left; }
 
@@ -20,22 +20,50 @@ a:hover { text-decoration: underline; color: #colour2 }
 
 #sidebar { float: right; border-top: dashed 2px #colour5; padding: 5px 0 0 0; }
 #sidebar li { list-style: none; }
-#sidebar li:before { content: "» "; }
+/* #sidebar li:before { content: "» "; } */
 
 #footer { margin: 25px 0 0 0; padding: 5px 0 0 0; border-top-style: dotted; border-top-width: 1px; border-top-color: #colour3; }
 #footer ul { padding: 0 0 5px 0; margin: 0 0 5px 0; border-bottom-style: dotted; border-bottom-width: 1px; border-bottom-color: #colour4; }
 #footer ul li { list-style: none; display: inline; padding: 0 20px 0 0; }
 
-form li, form ul { list-style: none; display: block; }
+form li, form ul, form ol { list-style: none; display: block; padding-left: 0; }
 
-tbody tr:nth-child(2n) td, tbody tr.even td { background: #colour5; }
+
+thead th { background: #colour5; }
+tbody tr:nth-child(2n) td, tbody tr.even td { background: transparent; }
+table#pages tbody tr td { border-bottom: solid 3px #colour5; background: #fff; }
+
+table#pages th:nth-child(1), table#pages td:nth-child(1) { width: 30%; }
+table#pages th:nth-child(2), table#pages td:nth-child(2) { width: 40%; }
+table#pages th:nth-child(3), table#pages td:nth-child(3) { width: 20%; }
+table#pages th:nth-child(4), table#pages td:nth-child(4) { width: 5%; }
+table#pages th:nth-child(5), table#pages td:nth-child(5) { width: 5%; }
 
 .backtotop { float: right; }
 
-.control_panel-login #container { width: 475px; }
-.control_panel-login #body, .control_panel-login #content, .control_panel-login #header { border: none; }
-.control_panel-login #nav, .control_panel-login #sidebar, .control_panel-login #footer, .control_panel-login legend, .control_panel-login #header { display: none; }
+div#new-page fieldset, div#new-page label, div#new-page li { border: none; padding-bottom: 0; }
+div#new-page legend { display: none; }
+div#new-page label.page_content { float: none; }
+
+.setup #nav, .setup #footer-nav, .setup-done #nav, .setup-done #footer-nav { display: none; }
+.login #container, .login #container #body.span-24, .login #content.span-18 { width: 475px; }
+.login #body, .login #content, .login #header, .login fieldset, body.login { border: none; background: none; }
+.login input { width: 100%; }
+.login #nav, .login #sidebar, .login #footer, .login legend, .login #header { display: none; }
 
 label { float: left; width: 10em; margin-right: 1em; }  
 fieldset li { float: left; clear: left; width: 100%; padding-bottom: 1em; } 
-fieldset { float: left; clear: left; width: 100%; margin: 0 0 1.5em 0; padding: 0; }  
+fieldset { float: left; clear: left; width: 100%; margin: 0 0 1.5em 0; padding: 0; }
+
+#dialog label, #dialog input { display:block; }
+#dialog label { margin-top: 0.5em; }
+#dialog input, #dialog textarea { width: 95%; }
+#tabs { margin-top: 1em; }
+#tabs li .ui-icon-close { float: right; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+#add_tab { cursor: pointer; }
+
+.monospace {  
+    font-family: monospace;
+    font-size: 1.25em;
+}
+        

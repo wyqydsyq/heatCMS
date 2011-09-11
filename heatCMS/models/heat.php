@@ -46,7 +46,7 @@ class Heat extends CI_Model {
                 $cookie = array(
                     'name' => 'login_key',
                     'value' => get_cookie('login_key'),
-                    'expire' => time() + (60 * 60),
+                    'expire' => 60 * 60,
                     'domain' => '.' . get_domain(),
                     'path' => '/',
                     'prefix' => '',
@@ -69,6 +69,38 @@ class Heat extends CI_Model {
     }
     function error($error, $page){
         redirect('/error/e/404/'.$page, 'location');
+    }
+    
+    function returnDir($dir) {
+        $files = array();
+        if ($handle = opendir($dir)) {
+            while (false !== ($file = readdir($handle))) {
+                if ($file != "." && $file != "..") {
+                    if (is_dir($dir . '/' . $file)) {
+                        $dir2 = $dir . '/' . $file;
+                        $files[] = getFilesFromDir($dir2);
+                    } else {
+                        $files[] = $dir . '/' . $file;
+                    }
+                }
+            }
+            closedir($handle);
+        }
+
+        return array_flat($files);
+    }
+
+    function array_flat($array) {
+
+        foreach ($array as $a) {
+            if (is_array($a)) {
+                $tmp = array_merge($tmp, array_flat($a));
+            } else {
+                $tmp[] = $a;
+            }
+        }
+
+        return $tmp;
     }
 
 }

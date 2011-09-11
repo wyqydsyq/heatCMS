@@ -96,7 +96,7 @@ $autoload['config'] = array();
 |
 */
 
-$autoload['language'] = array('heat');
+$autoload['language'] = array($GLOBALS['default_language'].'/heat');
 
 
 /*

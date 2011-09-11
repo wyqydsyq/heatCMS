@@ -98,6 +98,22 @@ ________________________________________________________________________________
                 <title>jquery-ui</title>
                 <src>jquery-ui-1.8.12.custom.min.js</src>
             </file>
+            <file>
+                <title>tinymce</title>
+                <src>tiny_mce/jquery.tinymce.js</src>
+            </file>
+            <file>
+                <title>jquery-tablesorter</title>
+                <src>jquery.tablesorter.min.js</src>
+            </file>
+            <file>
+                <title>jquery-functions</title>
+                <src>functions.js</src>
+            </file>
+            <file>
+                <title>heat</title>
+                <src>heat.js</src>
+            </file>
 	</js>
 		
 	<php>

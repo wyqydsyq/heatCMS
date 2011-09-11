@@ -6,14 +6,6 @@
  * 
  */
 
-// change $sidebar_content depending on the page
-if(strpos($path, 'control_panel') !== false && strpos($path, 'login') === false){
-    $sidebar_content = null;
-    $sidebar_content .= '<h2>Quick Links</h2>';
-    $sidebar_content .= '<ul>';
-    $sidebar_content .= '<li><a href="'.site_url('control_panel/pages/new').'" class="button">New Page</a></li>';
-    $sidebar_content .= '</ul>';
-}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,6 +13,7 @@ if(strpos($path, 'control_panel') !== false && strpos($path, 'login') === false)
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title><?php echo @$title; ?></title>
         <?php echo @$theme_css; ?>
+        <?php echo @$theme_js; ?>
     </head>
     <body<?php if (!empty($path)) { echo ' class="' . $path . '"'; } ?>>
         <div id="container" class="container">
@@ -46,17 +39,16 @@ if(strpos($path, 'control_panel') !== false && strpos($path, 'login') === false)
             </div>
             <div id="footer" class="span-24">
                 <div class="footer-content">
-                    <ul>
+                    <ul id="footer-nav">
                         <?php echo $this->Page->generate_nav(@$zone); ?>
                     </ul>
                     <a href="#header" class="backtotop"><?php echo $this->lang->line('page_back_to_top'); ?></a>
                     <div class="clear"></div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; <?php echo $this->Heat->conf('site_name'); ?> <?php echo date("Y"); ?>.<span style="float: right;">Page generated in {elapsed_time}s | Powered by <a href="https://github.com/pyrokinetic/heatCMS">heatCMS</a> | <a href="<?php echo site_url('control_panel'); ?>">Control Panel</a></span></p>
+                    <p>&copy; <?php echo $this->Heat->conf('site_name'); ?> <?php echo date("Y"); ?>.<span style="float: right;">Page generated in {elapsed_time}s | Powered by <a href="https://github.com/pyrokinetic/heatCMS">heatCMS</a> | <a href="<?php echo site_url('desktop'); ?>">Desktop</a></span></p>
                 </div>
             </div>
         </div>
-        <?php echo @$theme_js; ?>
     </body>
 </html>
