@@ -8,10 +8,10 @@
         <link type="text/css" href="assets/desktop/jquery-ui-1.8.12.custom.css" rel="Stylesheet" />	
     </head>
     <body id="canvas">
-        <div id="desktop">          
+        <div id="desktop">  
+            <button id="do_button" type="button">Do</button>
             <div id="do_menu">
             </div>
-            <button id="do_button" type="button">Do</button>
             <div id="desklet_holder">
                  
             </div>

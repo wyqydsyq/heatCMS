@@ -50,7 +50,7 @@ class Desktop extends CI_Controller {
 
         // make a list item for each installed desklet
         foreach ($desklets as $desklet) {
-            $output .= '<li><a href="' . site_url('assets/desktop/desklets/') . '/' . $desklet['name'] . '/" alt="' . $desklet['name'] . '" ><img src="' . site_url('assets/desktop/desklets') . '/' . $desklet['name'] . '/'.$desklet['icon'].'" alt="' . $desklet['title'] . '" title="' . $desklet['title'] . '"></a></li>';
+            $output .= '<li><a href="' . site_url('assets/desktop/desklets/') . '/' . $desklet['name'] . '/" alt="' . $desklet['name'] . '" ><img src="' . site_url('assets/desktop/desklets') . '/' . $desklet['name'] . '/'.$desklet['icon'].'" width="48" height="48" alt="' . $desklet['title'] . '" title="' . $desklet['title'] . '"></a></li>';
         }
 
         // if no desklets are found/installed, tell the user
@@ -71,7 +71,13 @@ class Desktop extends CI_Controller {
     // the heatCMS database etc.)
     public function desklet_load($desklet) {
         $file = $_GET['file'];
-        $this->load->view('../../assets/desktop/desklets/'.$desklet.'/'.$file);
+        unset($_GET['file']);
+        
+        foreach($_GET as $key=>$val){
+            $vars[$key] = $val;
+        }
+        
+        $this->load->view('../../assets/desktop/desklets/'.$desklet.'/'.$file, @$vars);
     }
 
     ////////////////////////////////////////////////////////////////////////////

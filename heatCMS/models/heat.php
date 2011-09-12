@@ -1,16 +1,17 @@
 <?php
+
 class Heat extends CI_Model {
 
     function __construct() {
         parent::__construct();
     }
-    
+
     // return a key from heat.conf
-    function conf($key){
-            $str = $GLOBALS['heat_config'][$key];
-            return $str;
+    function conf($key) {
+        $str = $GLOBALS['heat_config'][$key];
+        return $str;
     }
-    
+
     // see if user is authorised to access this page
     function user_auth($auth_req='administrator') {
         $query_filters;
@@ -41,7 +42,7 @@ class Heat extends CI_Model {
 
             // if match was not found, redirect to login. Otherwise refresh the cookie
             if ($match !== true) {
-                redirect('login?from='.urlencode(uri_string()));
+                redirect('login?from=' . urlencode(uri_string()));
             } else {
                 $cookie = array(
                     'name' => 'login_key',
@@ -55,22 +56,23 @@ class Heat extends CI_Model {
             }
         }
     }
-    
+
     // return a value from user's database row
-    function user($val){
+    function user($val) {
         $key = $this->input->cookie('key');
         $query = $this->db->query("SELECT `$val` FROM `heat_users` WHERE `key`='$key'");
         $col = $query->result_array();
-        if($query->num_rows() > 0){
+        if ($query->num_rows() > 0) {
             return $col[0][$val];
-        }else{
+        } else {
             return false;
         }
     }
-    function error($error, $page){
-        redirect('/error/e/404/'.$page, 'location');
+
+    function error($error, $page) {
+        redirect('/error/e/404/' . $page, 'location');
     }
-    
+
     function returnDir($dir) {
         $files = array();
         if ($handle = opendir($dir)) {
@@ -103,5 +105,26 @@ class Heat extends CI_Model {
         return $tmp;
     }
 
+    function get_installed_desklets() {
+        if ($dirhandle = opendir('assets/desktop/desklets/')) {
+            while (false !== ($file = readdir($dirhandle))) {
+                if ($file != "." && $file != "..") {
+                    // load their launcher.json
+                    $launcher_json = 'assets/desktop/desklets/' . $file . '/launcher.json';
+                    if (file_exists($launcher_json)) {
+                        $handle = fopen($launcher_json, 'r');
+                        $json = fread($handle, filesize($launcher_json));
+                        fclose($handle);
+
+                        $desklets[$file] = json_decode($json, true);
+                    }
+                }
+            }
+            closedir($dirhandle);
+        }
+        return $desklets;
+    }
+
 }
+
 ?>

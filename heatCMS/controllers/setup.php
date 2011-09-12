@@ -71,13 +71,10 @@ class Setup extends CI_Controller {
             ");
 
             // enable default desklets
-            $meta = array('created' => time(), 'last_editor' => 'system');
-            $this->db->query("REPLACE INTO `heat_desklets`
-                    (`name`)
-                    VALUES(
-                            'dashboard'
-                    )
-            ");
+            $default_desklets = array('dashboard', 'desklet_manager');
+            foreach ($default_desklets as $desklet) {
+                $this->db->query("REPLACE INTO `heat_desklets` (`name`) VALUES('" . $desklet . "')");
+            }
 
             // find installed languages
             $languages = array();
@@ -118,7 +115,7 @@ class Setup extends CI_Controller {
             $meta = serialize($meta);
 
             // create admin account
-            $query_users = "REPLACE INTO `heat_users` (username, password, email, class, key, meta) VALUES('$username', '$password', '$email', '$class', '$key', '$meta')";
+            $query_users = "REPLACE INTO `heat_users` (`username`, `password`, `email`, `class`, `key`, `meta`) VALUES('$username', '$password', '$email', '$class', '$key', '$meta')";
 
 
             // data to insert into the heat_config table
@@ -131,7 +128,7 @@ class Setup extends CI_Controller {
 
             // insert into heat_config
             foreach ($config_arr as $key => $val) {
-                $this->db->query("REPLACE INTO `heat_config` (name, content) VALUES('$key','$val')");
+                $this->db->query("REPLACE INTO `heat_config` (`name`, `content`) VALUES('$key','$val')");
             }
             // insert admin to heat_users
             $this->db->query($query_users);

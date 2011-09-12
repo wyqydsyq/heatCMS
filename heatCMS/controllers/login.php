@@ -17,7 +17,7 @@ class Login extends CI_Controller {
         $key = hash('sha256', $key);
         $check = $this->db->query("SELECT * FROM `heat_users` WHERE `key`='".$key."'");
         if ($check->num_rows() > 0) {
-            $result = $check->result_array();
+            $result = $check->row_array();
             $meta = unserialize($result['meta']);
             $meta['last_ip'] = $this->input->ip_address();
             $meta = serialize($meta);

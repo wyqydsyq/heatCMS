@@ -59,9 +59,9 @@
 .ui-widget { font-family: Arial,sans-serif; font-size: 1.1em; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Arial,sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #eeeeee; background: #ffffff url(jqueryui/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #333333; }
+.ui-widget-content { border: 1px solid #3D3D3D; background: #ffffff url(jqueryui/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #333333; }
 .ui-widget-content a { color: #333333; }
-.ui-widget-header { border: 1px solid #ff6000; background: #ff6000 url(jqueryui/ui-bg_glass_50_ff6000_1x400.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+.ui-widget-header { border: 1px solid #ff6000; border-bottom: none; background: #ff6000; color: #ffffff; font-weight: bold; }
 .ui-widget-header a { color: #ffffff; }
 
 /* Interaction states
