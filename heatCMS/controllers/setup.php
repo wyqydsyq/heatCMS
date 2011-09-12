@@ -23,7 +23,7 @@ class Setup extends CI_Controller {
             $create_table['content'] = $this->db->query("CREATE TABLE IF NOT EXISTS `heat_content` (
                 `id` TEXT PRIMARY KEY,
                 `order` NUMERIC,
-                `path` TEXT,
+                `parent` TEXT,
                 `title` TEXT,
                 `content` TEXT,
                 `meta` TEXT,
@@ -58,11 +58,11 @@ class Setup extends CI_Controller {
             // create default home page
             $meta = serialize(array('created' => time(), 'last_editor' => 'system'));
             $this->db->query("REPLACE INTO `heat_content`
-                (`id`, `order`, `path`, `title`, `content`, `meta`, `timestamp`)
+                (`id`, `order`, `parent`, `title`, `content`, `meta`, `timestamp`)
                 VALUES(
                     'home',
                     '1',
-                    'home',
+                    '',
                     'Home',
                     'Welcome to your new heatCMS installation!',
                     '" . $meta . "',

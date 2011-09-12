@@ -90,11 +90,11 @@ class Page extends CI_Model {
             $li_c = "</li>\n";
         }
 
-        $query = $this->db->query("SELECT `path`,`title` FROM `heat_content` ORDER BY `order` ASC");
+        $query = $this->db->query("SELECT `id`,`title` FROM `heat_content` ORDER BY `order` ASC");
 
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
-                $return .= @$li_o . anchor($row->path, $row->title) . @$li_c;
+                $return .= @$li_o . anchor($row->id, $row->title) . @$li_c;
             }
         }
         return $return;

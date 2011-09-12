@@ -14,7 +14,7 @@ class Base extends CI_Controller {
     
     public function index($page='home') {
         // Search the db for a page matching the request.
-        $query = $this->db->query("SELECT * FROM `heat_content` WHERE `path`='$page'");
+        $query = $this->db->query("SELECT * FROM `heat_content` WHERE `id`='$page'");
         $result = $query->result_array();
 
         if (empty($result)) {

@@ -28,11 +28,35 @@ class Database extends CI_Model {
     }
 
     function get_enabled_desklets() {
-        $result = $this->db->query("SELECT * FROM heat_desklets");
+        $result = $this->db->query("SELECT * FROM heat_desklets ORDER BY `name` ASC");
         foreach ($result->result_array() as $item) {
             $return[$item['name']] = array();
         }
         return $return;
+    }
+    
+    function get_page($pages=false){
+        if (empty($pages)) {
+            $result = $this->db->query("SELECT * FROM `heat_content`");
+            foreach ($result->result_array() as $item) {
+                $return[$item['name']] = $item['content'];
+            }
+            return $return;
+        }
+        $query = "SELECT * FROM heat_config WHERE ";
+        if(is_array($pages)){
+            foreach($pages as $page){
+                $query .= "`id`='" . $page . "' OR ";
+            }
+            // clip off the last ' OR '
+            $query = substr($query, 0, -4);
+        }else{
+            $query = "`id`='" . $page . "'";
+        }
+        
+        $result = $this->db->query($query);
+        $result = $result->result_array();
+        return $result;
     }
 
 }

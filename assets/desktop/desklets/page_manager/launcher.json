@@ -1,0 +1,12 @@
+{
+    "name": "page_manager",
+    "title": "Page Manager",
+    "icon": "icon.svg",
+    "version": "0.01",
+    "url": "",
+    "author": "Damon Poole",
+    "author_url": "",
+    "config" : {
+        "editor": "heat_editor"
+    }
+}
