@@ -10,9 +10,9 @@ theme, themes can use any CSS, JavaScript or PHP code they need, it all works.
 
 The back-end control panel is different from the generic control panel that you see on most CMS's,
 It's called the Desktop, and like the name implies, it works just like a desktop interface that you would use
-on a home computer. Where you would have pages in the control panel in a normal CMS, you have desklets on the heatCMS desktop
-desklets are javascript applications that run in the desktop environment as an application would on your computer's desktop
-through using AJAX they can interact with and modify the heatCMS database, as well as anything else you would normally do via AJAX.
+on a home computer. Where you would have pages in the control panel in a normal CMS, you have desklets on the heatCMS desktop.
+Desklets are JavaScript applications that run in the desktop environment as an application would on your computer's desktop.
+Through using AJAX they can interact with and modify the heatCMS database, as well as anything else you would normally do via AJAX.
 
 ## Requirements
 ### Server
