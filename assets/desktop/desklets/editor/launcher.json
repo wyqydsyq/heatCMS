@@ -1,12 +1,10 @@
 {
-    "name": "page_manager",
-    "title": "Page Manager",
+    "name": "editor",
+    "title": "Editor",
     "icon": "icon.svg",
     "version": "0.01",
     "url": "",
     "author": "Damon Poole",
     "author_url": "",
-    "config" : {
-        "editor": "editor"
-    }
+    "list": false
 }

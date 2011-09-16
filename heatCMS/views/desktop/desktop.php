@@ -5,7 +5,8 @@
     <head>
         <title><?php echo $config['site_name']; ?> :: heatCMS Desktop</title>
         <link type="text/css" rel="stylesheet" href="<?php echo $this->Heat->conf('site_url').'assets/desktop/desktop.css'; ?>" />
-        <link type="text/css" href="assets/desktop/jquery-ui-1.8.12.custom.css" rel="Stylesheet" />	
+        <link type="text/css" href="assets/desktop/jquery-ui-1.8.12.custom.css" rel="Stylesheet" />
+        <link type="text/css" href="assets/desktop/jwysiwyg/jquery.wysiwyg.css" rel="Stylesheet" />
     </head>
     <body id="canvas">
         <div id="desktop">  
@@ -18,6 +19,7 @@
         </div>
         <script type="text/javascript" src="<?php echo $this->Heat->conf('site_url').'assets/desktop/jquery-1.6.1.min.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo $this->Heat->conf('site_url').'assets/desktop/jquery-ui-1.8.12.custom.min.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->Heat->conf('site_url').'assets/desktop/jwysiwyg/jquery.wysiwyg.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo $this->Heat->conf('site_url').'assets/desktop/desktop.js'; ?>"></script>
     </body>
 </html>

@@ -41,7 +41,7 @@ class Desktop extends CI_Controller {
                 $handle = fopen($launcher_json, 'r');
                 $json = fread($handle, filesize($launcher_json));
                 fclose($handle);
-
+                
                 $desklets[$desklet] = json_decode($json, true);
             }else{
                 log_message('error' ,'The desklet "'.$desklet.'" was marked as enabled, but its launcher.json could not be found in '.$launcher_json);
@@ -50,7 +50,9 @@ class Desktop extends CI_Controller {
 
         // make a list item for each installed desklet
         foreach ($desklets as $desklet) {
-            $output .= '<li><a href="' . site_url('assets/desktop/desklets/') . '/' . $desklet['name'] . '/" alt="' . $desklet['name'] . '" ><img src="' . site_url('assets/desktop/desklets') . '/' . $desklet['name'] . '/'.$desklet['icon'].'" width="48" height="48" alt="' . $desklet['title'] . '" title="' . $desklet['title'] . '"></a></li>';
+            if(!isset($desklet['list']) || $desklet['list'] !== false){
+                $output .= '<li><a href="' . site_url('assets/desktop/desklets/') . '/' . $desklet['name'] . '/" alt="' . $desklet['name'] . '" ><img src="' . site_url('assets/desktop/desklets') . '/' . $desklet['name'] . '/'.$desklet['icon'].'" width="48" height="48" alt="' . $desklet['title'] . '" title="' . $desklet['title'] . '"></a></li>';
+            }
         }
 
         // if no desklets are found/installed, tell the user
