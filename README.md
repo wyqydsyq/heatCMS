@@ -15,6 +15,7 @@ Packages are JavaScript applications that run in the desktop environment as an a
 Through using AJAX they can interact with and modify the heatCMS database or other server-side functions.
 
 ## Requirements
+
 ### Server
 * Server must have PHP 5.2/5.3 or newer installed
 * Server must have apache mod_rewrite installed/enabled
@@ -25,8 +26,10 @@ Through using AJAX they can interact with and modify the heatCMS database or oth
 * The Desktop requires a modern browser with CSS3 and SVG support to work as intended, Firefox 5+ and Chromium/Chrome 13+ have been tested. Webkit based browsers should all work without issue. Internet Explorer is NOT currently supported, desktop will appear distorted when attempting to use internet explorer due to its lack of CSS 3 and SVG support (it's a matter of IE lacking capabilities of modern, standards compliant browsers, not a lack of support for IE).
 
 ## Changelog
+
 ### 0.5
 * page_manager and editor packages implemented with basic functionality (add, edit and delete pages) CMS is now in a usable state.
+
 ### 0.2
 * Created package_manager package
 * Refined desktop UI
