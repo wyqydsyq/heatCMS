@@ -12,7 +12,9 @@ $(function(){
                 // do menu launchers
                 $("#do_menu a").click(function(event){
                     event.preventDefault();
-                    $.getScript("assets/desktop/desklets/"+$(this).attr('alt')+"/execute.js");
+					$('#do_button').toggleClass('clicked');
+					$('#do_menu').toggleClass('show');
+                    $.getScript("assets/desktop/packages/"+$(this).attr('alt')+"/execute.js");
                 });
             });
         }

@@ -1,6 +1,6 @@
 {
-    "name": "desklet_manager",
-    "title": "Desklet Manager",
+    "name": "package_manager",
+    "title": "Package Manager",
     "icon": "icon.svg",
     "version": "0.01",
     "url": "",

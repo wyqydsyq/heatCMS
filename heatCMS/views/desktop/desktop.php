@@ -13,7 +13,7 @@
             <button id="do_button" type="button">Do</button>
             <div id="do_menu">
             </div>
-            <div id="desklet_holder">
+            <div id="package_holder">
                  
             </div>
         </div>

@@ -2,7 +2,7 @@
 
 // get all pages
 $pages = $this->Database->get_pages();
-// build the desklet manager
+// build the package manager
 echo '<button id="new-page" alt="Create a new page">New Page</button>';
 echo '<table id="page-manager-table">';
 echo '<tr><th width="80%">Page</th><th>Edit</th><th>Delete</th></tr>';

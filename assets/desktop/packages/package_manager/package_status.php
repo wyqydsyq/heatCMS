@@ -1,7 +1,7 @@
 <?php
 switch($action){
     case 'enable':
-        $enable = $this->db->query("INSERT INTO `heat_desklets` (`name`) VALUES('".$desklet."')");
+        $enable = $this->db->query("INSERT INTO `heat_packages` (`name`) VALUES('".$package."')");
         if($enable){
             echo 'true';
         }else{
@@ -9,7 +9,7 @@ switch($action){
         }
     break;
     case 'disable':
-        $disable = $this->db->query("DELETE FROM `heat_desklets` WHERE(`name`='".$desklet."')");
+        $disable = $this->db->query("DELETE FROM `heat_packages` WHERE(`name`='".$package."')");
         if($disable){
             echo 'true';
         }else{

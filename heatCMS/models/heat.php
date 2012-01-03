@@ -105,24 +105,24 @@ class Heat extends CI_Model {
         return $tmp;
     }
 
-    function get_installed_desklets() {
-        if ($dirhandle = opendir('assets/desktop/desklets/')) {
+    function get_installed_packages() {
+        if ($dirhandle = opendir('assets/desktop/packages/')) {
             while (false !== ($file = readdir($dirhandle))) {
                 if ($file != "." && $file != "..") {
                     // load their launcher.json
-                    $launcher_json = 'assets/desktop/desklets/' . $file . '/launcher.json';
+                    $launcher_json = 'assets/desktop/packages/' . $file . '/launcher.json';
                     if (file_exists($launcher_json)) {
                         $handle = fopen($launcher_json, 'r');
                         $json = fread($handle, filesize($launcher_json));
                         fclose($handle);
 
-                        $desklets[$file] = json_decode($json, true);
+                        $packages[$file] = json_decode($json, true);
                     }
                 }
             }
             closedir($dirhandle);
         }
-        return $desklets;
+        return $packages;
     }
 
 }

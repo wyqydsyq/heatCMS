@@ -27,8 +27,8 @@ class Database extends CI_Model {
         return $result['content'];
     }
 
-    function get_enabled_desklets() {
-        $result = $this->db->query("SELECT * FROM `heat_desklets` ORDER BY `name` ASC");
+    function get_enabled_packages() {
+        $result = $this->db->query("SELECT * FROM `heat_packages` ORDER BY `name` ASC");
         foreach ($result->result_array() as $item) {
             $return[$item['name']] = array();
         }

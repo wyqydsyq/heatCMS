@@ -41,8 +41,8 @@ class Setup extends CI_Controller {
                 `meta` TEXT
             )");
 
-            // desklets table
-            $create_table['desklets'] = $this->db->query("CREATE TABLE IF NOT EXISTS `heat_desklets` (
+            // packages table
+            $create_table['packages'] = $this->db->query("CREATE TABLE IF NOT EXISTS `heat_packages` (
                 `name` TEXT PRIMARY KEY
             )");
 
@@ -70,10 +70,10 @@ class Setup extends CI_Controller {
                 )
             ");
 
-            // enable default desklets
-            $default_desklets = array('dashboard', 'desklet_manager');
-            foreach ($default_desklets as $desklet) {
-                $this->db->query("REPLACE INTO `heat_desklets` (`name`) VALUES('" . $desklet . "')");
+            // enable default packages
+            $default_packages = array('dashboard', 'package_manager');
+            foreach ($default_packages as $package) {
+                $this->db->query("REPLACE INTO `heat_packages` (`name`) VALUES('" . $package . "')");
             }
 
             // find installed languages

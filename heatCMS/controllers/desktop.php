@@ -5,7 +5,7 @@
  * 
  * This file is the controller for the whole desktop system, it loads the
  * desktop initially and provides the server-side of the desktop AJAX
- * functionality, as well as AJAX functionalities for desklets.
+ * functionality, as well as AJAX functionalities for packages.
  */
 class Desktop extends CI_Controller {
 
@@ -25,39 +25,39 @@ class Desktop extends CI_Controller {
     ////////////////////////////////////////////////////////////////////////////
     
     ////////////////////////////////////////////////////////////////////////////
-    // generates the do menu, filling it with all enabled desklets.
+    // generates the do menu, filling it with all enabled packages.
     public function do_menu() {
         // start the unordered list
         $output = '<ul>';
 
-        // get an array of enabled desklets from the database
-        $enabled_desklets = $this->Database->get_enabled_desklets();
+        // get an array of enabled packages from the database
+        $enabled_packages = $this->Database->get_enabled_packages();
         
-        // load the launcher.json config file for each enabled desklet and
+        // load the launcher.json config file for each enabled package and
         // then decode it into an array
-        foreach ($enabled_desklets as $desklet => $array) {
-            $launcher_json = 'assets/desktop/desklets/'.$desklet.'/launcher.json';
+        foreach ($enabled_packages as $package => $array) {
+            $launcher_json = 'assets/desktop/packages/'.$package.'/launcher.json';
             if(file_exists($launcher_json)){
                 $handle = fopen($launcher_json, 'r');
                 $json = fread($handle, filesize($launcher_json));
                 fclose($handle);
                 
-                $desklets[$desklet] = json_decode($json, true);
+                $packages[$package] = json_decode($json, true);
             }else{
-                log_message('error' ,'The desklet "'.$desklet.'" was marked as enabled, but its launcher.json could not be found in '.$launcher_json);
+                log_message('error' ,'The package "'.$package.'" was marked as enabled, but its launcher.json could not be found in '.$launcher_json);
             }
         }
 
-        // make a list item for each installed desklet
-        foreach ($desklets as $desklet) {
-            if(!isset($desklet['list']) || $desklet['list'] !== false){
-                $output .= '<li><a href="' . site_url('assets/desktop/desklets/') . '/' . $desklet['name'] . '/" alt="' . $desklet['name'] . '" ><img src="' . site_url('assets/desktop/desklets') . '/' . $desklet['name'] . '/'.$desklet['icon'].'" width="48" height="48" alt="' . $desklet['title'] . '" title="' . $desklet['title'] . '"></a></li>';
+        // make a list item for each installed package
+        foreach ($packages as $package) {
+            if(!isset($package['list']) || $package['list'] !== false){
+                $output .= '<li><a href="' . site_url('assets/desktop/packages/') . '/' . $package['name'] . '/" alt="' . $package['name'] . '" ><img src="' . site_url('assets/desktop/packages') . '/' . $package['name'] . '/'.$package['icon'].'" width="48" height="48" alt="' . $package['title'] . '" title="' . $package['title'] . '"></a></li>';
             }
         }
 
-        // if no desklets are found/installed, tell the user
-        if (empty($desklets)) {
-            $output .= '<li>No desklets could be found.</li>';
+        // if no packages are found/installed, tell the user
+        if (empty($packages)) {
+            $output .= '<li>No packages could be found.</li>';
         }
 
         // end the unordered list
@@ -69,17 +69,20 @@ class Desktop extends CI_Controller {
 
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
-    // function for desklets to load php files as views (so desklets can access
+    // function for packages to load php files as views (so packages can access
     // the heatCMS database etc.)
-    public function desklet_load($desklet) {
-        $file = $_GET['file'];
-        unset($_GET['file']);
+    public function package_load($package) {
+		$data = $_GET;
+		if(empty($data['file'])){$data = $_POST;}
+		
+        $file = $data['file'];
+        unset($data['file']);
         
-        foreach($_GET as $key=>$val){
+        foreach($data as $key=>$val){
             $vars[$key] = $val;
         }
         
-        $this->load->view('../../assets/desktop/desklets/'.$desklet.'/'.$file, @$vars);
+        $this->load->view('../../assets/desktop/packages/'.$package.'/'.$file, @$vars);
     }
 
     ////////////////////////////////////////////////////////////////////////////
